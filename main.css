@@ -16,18 +16,27 @@
  * Base structure
  */
 
-body {
+html, body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   background-color: #11388C;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
 }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100dvh; /* mobile-friendly viewport height */
   pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.3), transparent 70%);
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.7);
   z-index: 1;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+}
+@supports not (height: 100dvh) {
+  body::before {
+    height: 100vh;
+  }
 }
 
 
