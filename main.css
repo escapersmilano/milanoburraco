@@ -40,10 +40,10 @@ body::before {
 }
 
 input {
-  color: black;
+  color: black !important;
 }
 textarea{
-  color: black;
+  color: black !important;
 }
 
 
